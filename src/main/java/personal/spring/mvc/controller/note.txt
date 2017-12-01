@@ -1,0 +1,54 @@
+@Controller
+@RequestMapping
+    from 4.3, following annotation added.
+    @GetMapping, @PostMapping, @PutMapping, @DeleteMapping, @PatchMapping
+    @GetMapping means GET@RequestMapping, it substitute @RequestMapping in GET situation.
+@PathVariable (access URI template variables)
+@MatrixVariable
+@RequestParam(this means /?id=1)
+@RequestBody
+    what is request body, request body vs request entity: https://www.w3.org/Protocols/rfc2616/rfc2616-sec4.html
+    HttpMessageConvert will do the job.
+    It can convert from Http request to object(not only String) or from object to Http response body.
+    following object supported:
+    byte array, String, Map<String, String>, javax.xml.ttransform.Source.
+@ResponseBody
+HttpEntity(ResponseEntity)
+    Here, they are not annotation
+    the entity here can also access request and response headers.
+
+@ModelAttribute on a method
+without @RequestMapping: tt is invoked before @RequestMapping methods, within the same controller.
+with @RequestMapping: the return value is interpretedas a model attribute, the view name is derived from view name conventions.
+
+@ModelAttribute on a method arguments
+This is known as data binding in Spring MVC.
+add BindingResult argument immediately following it.
+
+@SessionAttributes vs @SessionAttribute
+@SessionAttributes is type-level annotation.
+@SessionAttribute is used to access pre-existing session attributes that are managed globally, i.e. outside the controller(e.g. by a filter),
+and may or may not be present.
+
+RedirectAttributes
+it can be used for flash attributes.
+
+HttpPutFormContentFilter, can be configured in web.xml.
+why we need this.
+it is used for Http PUT and PATCH request.
+
+@CookieValue
+@RequestHeader
+
+@InitBinder
+
+@RequestAttribute, similar to @SessionAttribute, this annotation can be used to access presxisting request attributes created by a filter or interceptor.
+
+@ControllerAdvice
+it can contain @Exceptionhandler, @InitBinder, @ModelAttribute annotation, and these methods will apply to @RequestMapping methods
+across all controller.
+@RestControllerAdvice
+is an alternative where @ExceptionHandler methods assume @ResponseBody semantics by default.
+
+@JsonView
+
