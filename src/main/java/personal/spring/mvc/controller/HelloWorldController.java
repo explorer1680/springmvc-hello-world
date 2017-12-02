@@ -13,8 +13,6 @@ public class HelloWorldController {
 
     @RequestMapping("/hello")
     public ModelAndView helloWorld() {
-        LOGGER.error("I am here");
-
         String message = "HELLO SPRING MVC HOW R U";
         return new ModelAndView("hellopage", "message", message);
     }
