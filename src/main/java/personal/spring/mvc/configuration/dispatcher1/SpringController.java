@@ -1,6 +1,5 @@
 package personal.spring.mvc.configuration.dispatcher1;
 
-import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;

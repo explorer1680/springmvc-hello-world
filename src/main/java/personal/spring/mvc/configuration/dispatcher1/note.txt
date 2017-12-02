@@ -1,0 +1,1 @@
+using RequestContextUtils.findWebApplicationContext(request) to get WebApplicationContext associated with this dispatcherServlet by HttpServletRequest.
