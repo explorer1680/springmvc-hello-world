@@ -1,0 +1,19 @@
+how to define jdbc driver for tomcat7-maven-plugin:
+
+https://stackoverflow.com/questions/9928829/tomcat7-maven-plugin-extradependency-seems-not-being-loaded
+
+just define as followings:
+
+
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<dependencies>
+				    <dependency>
+				        <groupId>...</groupId>
+				        <artifactId>...</artifactId>
+				        <version>...</version>
+				    </dependency>
+				</dependencies>
+			</plugin>

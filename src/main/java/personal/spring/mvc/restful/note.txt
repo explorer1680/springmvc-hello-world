@@ -1,0 +1,3 @@
+How to generate application.wadl file for spring mvc project.
+
+https://javattitude.com/2014/05/26/wadl-generator-for-spring-rest/
