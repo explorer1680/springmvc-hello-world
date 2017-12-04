@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -18,6 +19,13 @@ public class SpringController {
     public ModelAndView helloWorld(HttpServletRequest request) {
 //        String message = "HELLO SPRING MVC HOW R U";
     	String message = RequestContextUtils.findWebApplicationContext(request).getDisplayName();
-        return new ModelAndView("hellopage", "message", message);
+    	for(String s: ((ApplicationContext)RequestContextUtils.findWebApplicationContext(request)).getBeanDefinitionNames()){
+            LOGGER.error(s);
+        }
+
+        ModelAndView rtn = new ModelAndView("hellopage", "message", message);
+//        rtn.addObject("info", info);
+        return rtn;
+
     }
 }

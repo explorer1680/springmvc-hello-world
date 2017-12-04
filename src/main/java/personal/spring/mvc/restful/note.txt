@@ -1,3 +1,10 @@
 How to generate application.wadl file for spring mvc project.
 
 https://javattitude.com/2014/05/26/wadl-generator-for-spring-rest/
+
+to make this code work, you should configure (register) RequestMappingHandlerMapping by MVC Java Config, or XML namespace.
+
+you can see the RequestMappingHandlerMapping registered in context or not by
+1. toggle <mvc:annotation-driven/> in spring-servlet.xml
+2. access the page: http://localhost:8080/spring-mvc/spring/hello
+3. check log in console.
