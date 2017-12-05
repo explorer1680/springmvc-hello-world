@@ -1,0 +1,2 @@
+using RequestContextUtils.findWebApplicationContext(request) to get WebApplicationContext associated with this dispatcherServlet by HttpServletRequest.
+using RequestContextUtils.findWebApplicationContext(request).getParentBeanFactory() to get root ApplicationContext.

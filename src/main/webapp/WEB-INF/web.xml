@@ -30,9 +30,11 @@
 	</servlet-mapping>
 
 	<!-- you define spring-root.xml in main/resources, it will appear in /WEB-INF/classes/ -->
+	<!-- you can define classpath:xxx here, it is inside of web.xml, but, this parameter is passed to spring as a whole part. -->
+	<!-- it seems that WEB-INF/classes/spring-root.xml are not working -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/spring-root.xml</param-value>
+		<param-value>classpath:spring-root.xml</param-value>
 	</context-param>
 
 	<listener>
