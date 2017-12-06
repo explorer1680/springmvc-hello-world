@@ -8,3 +8,18 @@ you can see the RequestMappingHandlerMapping registered in context or not by
 1. toggle <mvc:annotation-driven/> in spring-servlet.xml
 2. access the page: http://localhost:8080/spring-mvc/spring/hello
 3. check log in console.
+
+
+You define @XmlRootElement and @XmlAccessType only on Person.class
+You don't need them on Address.class
+
+If you want the api can return xml and Json, you should annotate it with Xml annotation, and add jackson-databind dependency:
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>2.9.0</version>
+</dependency>
+
+Note, to let Json working, the model object should have public accessor.
+
+the InternalResourceViewResolver is not used when using @RestController.
