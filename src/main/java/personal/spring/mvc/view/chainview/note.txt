@@ -1,0 +1,1 @@
+Note, there is not so called "ChainViewResolver", you just configure multiple review resolver in xml file, then it is chain together automatically.
