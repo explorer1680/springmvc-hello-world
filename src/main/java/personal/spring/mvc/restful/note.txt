@@ -23,3 +23,6 @@ If you want the api can return xml and Json, you should annotate it with Xml ann
 Note, to let Json working, the model object should have public accessor.
 
 the InternalResourceViewResolver is not used when using @RestController.
+
+it seems that to make @RestController works, you have to use
+<mvc:annotation-driven/>

@@ -1,0 +1,7 @@
+to let this test case run, you have to config:
+<mvc:annotation-driven/>
+
+By default, XmlViewResolver will loads the view beans from /WEB-INF/views.xml, however, this location can be overridden through the “location” property
+
+to use jsp, using following view:
+org.springframework.web.servlet.view.InternalResourceView
