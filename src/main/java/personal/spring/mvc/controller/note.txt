@@ -16,6 +16,10 @@
 HttpEntity(ResponseEntity)
     Here, they are not annotation
     the entity here can also access request and response headers.
+    https://stackoverflow.com/questions/30548822/spring-mvc-4-application-json-content-type-is-not-being-set-correctly
+    Note: in above, the RequestMapping#produces() element only to restrict the mapping for your request handlers. It does nothing else.
+    this is not correct.
+    it matches requests with a Accept type, and affects the actual content type written.
 
 @ModelAttribute on a method
 without @RequestMapping: tt is invoked before @RequestMapping methods, within the same controller.
