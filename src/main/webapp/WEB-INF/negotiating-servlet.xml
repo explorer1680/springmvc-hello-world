@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-4.3.xsd
+http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
+    <context:component-scan base-package="personal.spring.mvc.view.contentnegotiating"/>
+
+    <bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+        <property name="favorPathExtension" value="true"/>
+        <property name="ignoreAcceptHeader" value="true"/>
+        <property name="useJaf" value="false"/>
+        <property name="defaultContentType" value="text/html"/>
+
+        <property name="mediaTypes">
+            <map>
+                <entry key="json" value="application/json"/>
+                <entry key="xml" value="application/xml"/>
+                <entry key="pdf" value="application/pdf"/>
+                <entry key="xlsx" value="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"/>
+                <entry key="html" value="text/html"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+        <property name="order" value="1"/>
+        <property name="contentNegotiationManager" ref="contentNegotiationManager"/>
+
+        <property name="viewResolvers">
+            <list>
+                <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+                    <property name="prefix" value="/WEB-INF/jsp/"/>
+                    <property name="suffix" value=".jsp"/>
+                </bean>
+            </list>
+        </property>
+
+        <property name="defaultViews">
+            <list>
+                <!-- JSON View -->
+                <bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
+                </bean>
+
+                <!--  XML view -->
+                <bean class="org.springframework.web.servlet.view.xml.MarshallingView">
+                    <constructor-arg>
+                        <bean class="org.springframework.oxm.castor.CastorMarshaller">
+                        </bean>
+                    </constructor-arg>
+                </bean>
+
+                <!--  PDF view -->
+                <bean class="personal.spring.mvc.view.contentnegotiating.PDFView">
+                </bean>
+
+                <!--  XLSX "Excel" view -->
+                <bean class="personal.spring.mvc.view.contentnegotiating.ExcelView">
+                </bean>
+            </list>
+        </property>
+
+    </bean>
+
+    <mvc:annotation-driven/>
+</beans>

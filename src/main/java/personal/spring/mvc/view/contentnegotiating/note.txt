@@ -1,0 +1,4 @@
+http://hmkcode.com/spring-mvc-view-json-xml-pdf-or-excel/
+
+Note, if you want to output, JSON or MXL, you can using ModelAndReview.
+
