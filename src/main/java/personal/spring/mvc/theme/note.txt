@@ -1,0 +1,9 @@
+when using <bean class="org.springframework.web.servlet.theme.ThemeChangeInterceptor">
+
+You can not use with:
+<bean id="themeResolver" class="org.springframework.web.servlet.theme.FixedThemeResolver"/>
+
+You can use with:
+SessionThemeResolver or CookieThemeResolver
+
+Although, when using ThemeChangeInterceptor, the strategy is not Session or Cookie anymore, but, you have to use one of them.
