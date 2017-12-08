@@ -1,3 +1,8 @@
+Using following link to access this test case:
+http://localhost:8080/spring-mvc/theme/theme.jsp?theme=bright
+
+
+
 when using <bean class="org.springframework.web.servlet.theme.ThemeChangeInterceptor">
 
 You can not use with:

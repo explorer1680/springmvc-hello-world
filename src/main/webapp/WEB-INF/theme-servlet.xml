@@ -18,10 +18,10 @@ http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
         <property name="defaultEncoding" value="UTF-8"/>
     </bean>
 
-    <!--<bean id="themeResolver" class="org.springframework.web.servlet.theme.CookieThemeResolver">-->
+    <bean id="themeResolver" class="org.springframework.web.servlet.theme.CookieThemeResolver">
         <!--<property name="defaultThemeName" value="bright"/>-->
         <!--<property name="cookieName" value="my-theme-cookie"/>-->
-    <!--</bean>-->
+    </bean>
 
     <!--<bean id="themeResolver" class="org.springframework.web.servlet.theme.SessionThemeResolver"/>-->
 
