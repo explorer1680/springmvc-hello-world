@@ -31,3 +31,6 @@ the InternalResourceViewResolver is not used when using @RestController.
 
 it seems that to make @RestController works, you have to use
 <mvc:annotation-driven/>
+
+Please note, if you have root context and servlet context, don't let your component scan have overlapped each other.
+Otherwise, <mvc:annotation-driven/> may not work.
