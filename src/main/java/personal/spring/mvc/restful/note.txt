@@ -25,7 +25,7 @@ Note, to let Json working, the model object should have public accessor.
 And, the above maven only make the project output json information, but, it is not means you can customize the json property by JAXB annotation
 like in jersey. you have to add @JsonProperty("") annotation to make it happens.
 
-@JsonProperty are comming from above maven dependency.
+@JsonProperty are coming from above maven dependency.
 
 the InternalResourceViewResolver is not used when using @RestController.
 
