@@ -1,2 +1,3 @@
 By default, ResourceBundleViewResolver will loads the view beans from file views.properties, which located at the root of the project class path.
-However, this location can be overridden through the “basename” property,
+However, this location can be overridden through the “basename” property.
+It is a ResourceBundle.

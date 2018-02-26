@@ -5,3 +5,5 @@ By default, XmlViewResolver will loads the view beans from /WEB-INF/views.xml, h
 
 to use jsp, using following view:
 org.springframework.web.servlet.view.InternalResourceView
+
+in this XmlViewResolver, the view name returned from Controller is the id in xml-view-resolver.xml.

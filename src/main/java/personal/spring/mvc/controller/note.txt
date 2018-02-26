@@ -22,7 +22,7 @@ HttpEntity(ResponseEntity)
     it matches requests with a Accept type, and affects the actual content type written.
 
 @ModelAttribute on a method
-without @RequestMapping: tt is invoked before @RequestMapping methods, within the same controller.
+without @RequestMapping: it is invoked before @RequestMapping methods, within the same controller.
 with @RequestMapping: the return value is interpretedas a model attribute, the view name is derived from view name conventions.
 
 @ModelAttribute on a method arguments
