@@ -1,0 +1,3 @@
+UrlBasedViewResolver vs InternalResourceViewResolver
+https://stackoverflow.com/questions/17453032/what-different-between-internalresourceviewresolver-vs-urlbasedviewresolver
+

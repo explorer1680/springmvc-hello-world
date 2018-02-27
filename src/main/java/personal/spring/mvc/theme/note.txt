@@ -1,4 +1,5 @@
 https://memorynotfound.com/spring-mvc-theme-switcher-example/
+https://www.concretepage.com/spring/spring-mvc/spring-mvc-themes-tutorial-and-example-with-themeresolver-using-annotation
 
 Using following link to access this test case:
 http://localhost:8080/spring-mvc/theme/theme.jsp?theme=bright
@@ -14,3 +15,17 @@ You can use with:
 SessionThemeResolver or CookieThemeResolver
 
 Although, when using ThemeChangeInterceptor, the strategy is not Session or Cookie anymore, but, you have to use one of them.
+
+To use ThemeChangeInterceptor, you have to use SessionThemeResolver or CookieThemeResolver, and their id has to be: "themeResolver",
+ThemeChangeInterceptor don't have method to set the "themeResolver".
+It seems that ThemeChangeInterceptor using one of them to do the job.
+It is an interceptor, it can change request's Cookie or Session I think.
+
+ResourceBundleThemeSource is necessary.
+The query param defined by ThemeChangeInterceptor should add "basenamePrefix" from ResourceBundleThemeSource,
+and search for locale. It will find an properties file.
+the properties defined in this property file is used by jsp page.
+
+<mvc:resources mapping="/themes/**" location="/themes/"/> is not necessary.
+This "mvc:resources" is used inside of jsp page.
+https://www.mkyong.com/spring-mvc/spring-mvc-how-to-include-js-or-css-files-in-a-jsp-page/

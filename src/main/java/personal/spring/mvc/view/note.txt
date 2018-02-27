@@ -1,11 +1,13 @@
 two interface:
 ViewResolver and View.
 
-There are 2 types of challenge in view generation:
-1. for jsp, jstl, etc., the basic problem is how to map your view name to the jsp to generate it, here, the ViewResolver comes,
-the ViewResolver including url based, xml, resource bundle deal with this part.
-2. generating different view according to different input, the content negotiating deal with this part.
+ViewResolver: Resolve logical String-based view name to actual View Types.
 
+View: generate output.
+If you are only using jsp, InternalResourceViewResolver is ok.
+If you are using other view tech, XmlViewResolver is suitable choice.
+If you want to locale works, use ResourceBundleViewResolver.
+If you want suffix determine the view, ContentNegotiatingViewResolver is the choice.
 
 What’s internal resource views?
 In Spring MVC or any web application, for good practice, it’s always recommended to put the entire views or JSP files under “WEB-INF” folder,
