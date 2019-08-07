@@ -4,10 +4,13 @@ ViewResolver and View.
 ViewResolver: Resolve logical String-based view name to actual View Types.
 
 View: generate output.
-If you are only using jsp, InternalResourceViewResolver is ok.
-If you are using other view tech, XmlViewResolver is suitable choice.
-If you want to locale works, use ResourceBundleViewResolver.
+
+
+If you are only using jsp, InternalResourceViewResolver is ok. (InternalResourceViewResolver can only deal with InternalResourceView(jsp))
+If you are using other view tech, XmlViewResolver is suitable choice.(the name for XmlViewResolver is not clear, this resolver map id with view, it can use to any view technology)
+If you want to locale works, use ResourceBundleViewResolver.(similar to XmlViewResolver, it is also can deal with different view technology)
 If you want suffix determine the view, ContentNegotiatingViewResolver is the choice.
+you can chain different view resolver together.
 
 What’s internal resource views?
 In Spring MVC or any web application, for good practice, it’s always recommended to put the entire views or JSP files under “WEB-INF” folder,

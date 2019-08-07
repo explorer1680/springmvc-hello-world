@@ -1,1 +1,3 @@
 Note, there is not so called "ChainViewResolver", you just configure multiple review resolver in xml file, then it is chain together automatically.
+
+InternalResourceViewResolver should be the last one, because it will throw error if it can't find the page.

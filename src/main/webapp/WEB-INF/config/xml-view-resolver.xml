@@ -1,11 +1,17 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
-    <bean id="XmlViewResolverPage"
-          class="org.springframework.web.servlet.view.InternalResourceView">
-        <property name="url" value="/WEB-INF/jsp/XmlViewResolverPage.jsp" />
-    </bean>
+	<bean id="XmlViewResolverPage"
+		class="org.springframework.web.servlet.view.InternalResourceView">
+		<property name="url" value="/WEB-INF/jsp/XmlViewResolverPage.jsp" />
+	</bean>
+
+<!-- 	<bean id="XmlViewResolverPage"
+		class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
+	</bean> -->
+
+
 
 </beans>
