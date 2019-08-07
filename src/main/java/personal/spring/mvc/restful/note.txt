@@ -24,32 +24,31 @@ If you want the api can return xml and Json, you should annotate it with Xml ann
 [INFO] |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.9.0:compile
 [INFO] |  \- com.fasterxml.jackson.core:jackson-core:jar:2.9.0:compile
 
-With above dependency:
-you have xml binding annotation on it:
+With above dependency and you have xml binding annotation on it:
 using: produces = MediaType.APPLICATION_XML_VALUE will return xml.
 using:@RequestMapping(value = "person/json", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE), will return json.
 without produces = MediaType.APPLICATION_JSON_VALUE, it will return xml.
 
-you don't have xml binding annotation on it:
+With above dependency and you don't have xml binding annotation on it:
 with or without produces = MediaType.APPLICATION_JSON_VALUE, it will return json.
 with produces = MediaType.APPLICATION_XML_VALUE, it will return error(406).
 
-Without above dependency:
-you have xml binding annotation on it:
+Without above dependency and you have xml binding annotation on it:
 using: produces = MediaType.APPLICATION_XML_VALUE will return xml.
 using:@RequestMapping(value = "person/json", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE), will return error(406).
 without produces = MediaType.APPLICATION_JSON_VALUE, it will return xml.
 
-you don't have xml binding annotation on it:
+Without above dependency and you don't have xml binding annotation on it:
 using: produces = MediaType.APPLICATION_XML_VALUE will return error(406).
 using:@RequestMapping(value = "person/json", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE), will return error(406).
 without produces = MediaType.APPLICATION_XML_VALUE or produces = MediaType.APPLICATION_JSON_VALUE, it will return error(500).
-
 
 Note, to let Json working, the model object should have public accessor.
 
 And, the above maven only make the project output json information, but, it is not means you can customize the json property by JAXB annotation
 like in jersey. you have to add @JsonProperty("") annotation to make it happens.
+
+So, the XML binding and Json binding are separately in SpringMVC.
 
 @JsonProperty are coming from above maven dependency.
 

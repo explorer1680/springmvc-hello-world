@@ -11,7 +11,7 @@
     HttpMessageConvert will do the job.
     It can convert from Http request to object(not only String) or from object to Http response body.
     following object supported:
-    byte array, String, Map<String, String>, javax.xml.ttransform.Source.
+    byte array, String, Map<String, String>, javax.xml.transform.Source.
 @ResponseBody
 HttpEntity(ResponseEntity)
     Here, they are not annotation
@@ -23,7 +23,7 @@ HttpEntity(ResponseEntity)
 
 @ModelAttribute on a method
 without @RequestMapping: it is invoked before @RequestMapping methods, within the same controller.
-with @RequestMapping: the return value is interpretedas a model attribute, the view name is derived from view name conventions.
+with @RequestMapping: the return value is interpreted as a model attribute, the view name is derived from view name conventions.
 
 @ModelAttribute on a method arguments
 This is known as data binding in Spring MVC.
@@ -46,7 +46,7 @@ it is used for Http PUT and PATCH request.
 
 @InitBinder
 
-@RequestAttribute, similar to @SessionAttribute, this annotation can be used to access presxisting request attributes created by a filter or interceptor.
+@RequestAttribute, similar to @SessionAttribute, this annotation can be used to access pre-existing request attributes created by a filter or interceptor.
 
 @ControllerAdvice
 it can contain @Exceptionhandler, @InitBinder, @ModelAttribute annotation, and these methods will apply to @RequestMapping methods
