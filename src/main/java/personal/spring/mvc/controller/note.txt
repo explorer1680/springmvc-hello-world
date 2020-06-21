@@ -21,6 +21,12 @@ HttpEntity(ResponseEntity)
     this is not correct.
     it matches requests with a Accept type, and affects the actual content type written.
 
+@Controller is to create a Map of model object and find a view.
+
+@RestController simply return the object and object data is directly written into HTTP response as JSON or XML.
+This can also be done with traditional @Controller and use @ResponseBody annotation.
+but since this is the default behavior of RESTful Web services, Spring introduced @RestController which combined the behavior of @Controller and @ResponseBody together.
+
 @ModelAttribute on a method
 without @RequestMapping: it is invoked before @RequestMapping methods, within the same controller.
 with @RequestMapping: the return value is interpreted as a model attribute, the view name is derived from view name conventions.
